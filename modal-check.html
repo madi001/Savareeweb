@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home</title>
+<meta name="description" content="Sidebar Transitions: Transition effects for off-canvas views" />
+<meta name="author" content="Codrops" />
+<link rel="shortcut icon" href="../favicon.ico">
+<link rel="stylesheet" type="text/css" href="css/foundation.css" />
+<link rel="stylesheet" type="text/css" href="css/icons.css" />
+<link rel="stylesheet" type="text/css" href="css/normalize2.css" />
+<link rel="stylesheet" type="text/css" href="css/index.css" />
+<link rel="stylesheet" href="css/foundation-icons/foundation-icons.css" />
+<script src="js/modernizr.custom.js"></script>
+<script src="js/vendor/modernizr.js"></script>
+<script src="js/jquery-2.1.1.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function(){
+
+	var id='<?php echo $Rating; ?>';
+	
+	var conc="";
+	for (var i=1; i<=id; i++)
+	{
+		conc = "#" + i;
+		AddCss(conc);
+		
+	}
+	$("#1").click(function(){
+		id = $(this).attr('id');
+		
+	});
+	
+	function AddCss(comingid)
+	{
+		$(comingid).removeClass("deactive");
+		$(comingid).addClass("activeRating");
+	}
+	
+	$("input[type='image']").click(function(e) {
+    $("input[id='myfile']").click();
+	e.preventDefault();
+	$("input[id='myfile']").change(function(){
+	
+	
+		$("#myform").submit();
+	});
+});
+	
+});
+	
+</script>
+
+</head>
+
+<body>
+
+
+<!-- Triggers the modals -->
+<a href="#" data-reveal-id="firstModal" class="radius button">Modal in a modal&hellip;</a>
+<a href="#" data-reveal-id="videoModal" class="radius button">Example Modal w/Video&hellip;</a>
+
+<!-- Reveal Modals begin -->
+<div id="firstModal" class="reveal-modal" data-reveal>
+  <h2>This is a modal.</h2>
+  <p>Reveal makes these very easy to summon and dismiss. The close button is simply an anchor with a unicode character icon and a class of <code>close-reveal-modal</code>. Clicking anywhere outside the modal will also dismiss it.</p>
+  <p>Finally, if your modal summons another Reveal modal, the plugin will handle that for you gracefully.</p>
+  <p><a href="#" data-reveal-id="secondModal" class="secondary button">Second Modal...</a></p>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+
+<div id="secondModal" class="reveal-modal" data-reveal>
+  <h2>This is a second modal.</h2>
+  <p>See? It just slides into place after the other first modal. Very handy when you need subsequent dialogs, or when a modal option impacts or requires another decision.</p>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+
+<div id="videoModal" class="reveal-modal large open" data-reveal="" style="visibility: visible; display: block; top: 765px; opacity: 1;">
+  <h2>This modal has video</h2>
+  <div class="flex-video widescreen vimeo" style="display: block;">
+    <iframe width="1280" height="720" src="http://www.youtube-nocookie.com/embed/wnXCopXXblE?rel=0" frameborder="0" allowfullscreen="" data-src="http://www.youtube-nocookie.com/embed/wnXCopXXblE?rel=0"></iframe>
+  </div>
+
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+
+
+<script src="js/vendor/jquery.js"></script> 
+<script src="js/foundation.min.js"></script> 
+<script>
+      $(document).foundation();
+    </script>
+</body>
+</html>
